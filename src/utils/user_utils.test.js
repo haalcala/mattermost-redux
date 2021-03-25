@@ -124,8 +124,8 @@ describe('user utils', () => {
             assert.deepEqual(filterProfilesStartingWithTerm(users, 'some'), [userB]);
         });
 
-        it('should not match by nickname substring', () => {
-            assert.deepEqual(filterProfilesStartingWithTerm(users, 'body'), []);
+        it('should match by nickname by substring', () => {
+            assert.deepEqual(filterProfilesMatchingTerm(users, 'body'), [userB]);
         });
 
         it('should match by email prefix', () => {
